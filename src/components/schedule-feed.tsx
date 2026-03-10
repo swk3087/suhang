@@ -81,14 +81,13 @@ export default function ScheduleFeed({
 
   return (
     <section className="card">
-      <h2 className="sectionTitle">수행 목록</h2>
+      <h2 className="sectionTitle">일정 목록</h2>
       <p className="subtle">제목을 누르면 본문과 첨부를 확인할 수 있습니다.</p>
       <ul className="scheduleList">
-        {items.map((item, index) => (
+        {items.map((item) => (
           <li
             key={item.id}
             className={`scheduleRow ${item.status === "inactive" ? "isInactive" : ""}`}
-            style={{ animationDelay: `${index * 30}ms` }}
           >
             <div className="scheduleRowMain">
               <Link href={item.detailPath} className="scheduleLink">
@@ -108,4 +107,3 @@ export default function ScheduleFeed({
     </section>
   );
 }
-

@@ -16,8 +16,8 @@ const displayFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "수행 일정 보드",
-  description: "수행 목록 조회 및 관리자 관리 웹서버",
+  title: "일정 보드",
+  description: "일정 목록 조회 및 관리자 관리 웹서버",
 };
 
 export default function RootLayout({

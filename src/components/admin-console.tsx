@@ -252,7 +252,7 @@ export default function AdminConsole() {
               className="textField"
               value={title}
               onChange={(event) => setTitle(event.target.value)}
-              placeholder="예: 수학 수행"
+              placeholder="예: 수학 일정"
             />
           </label>
 

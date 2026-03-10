@@ -53,7 +53,7 @@ a {
   padding: 24px 20px;
   display: grid;
   gap: 12px;
-  animation: riseIn 520ms ease forwards;
+  animation: riseIn 180ms ease-out forwards;
 }
 
 .compactHero {
@@ -97,7 +97,7 @@ a {
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 130ms ease, background-color 130ms ease, border-color 130ms ease;
+  transition: background-color 90ms ease, border-color 90ms ease, color 90ms ease;
 }
 
 .primaryLink,
@@ -111,7 +111,6 @@ a {
 
 .primaryLink:hover,
 .primaryButton:hover {
-  transform: translateY(-1px);
   background: var(--accent-strong);
 }
 
@@ -124,7 +123,6 @@ a {
 
 .secondaryLink:hover,
 .miniButton:hover {
-  transform: translateY(-1px);
   border-color: rgba(34, 36, 48, 0.28);
 }
 
@@ -197,7 +195,7 @@ a {
   padding: 10px 12px;
   display: grid;
   gap: 6px;
-  animation: slideFade 320ms ease both;
+  animation: slideFade 120ms ease-out both;
 }
 
 .scheduleRowMain {
@@ -388,7 +386,7 @@ a {
 @keyframes riseIn {
   0% {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(4px);
   }
   100% {
     opacity: 1;
@@ -399,11 +397,21 @@ a {
 @keyframes slideFade {
   0% {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(2px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
 
