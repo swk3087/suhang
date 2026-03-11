@@ -81,8 +81,8 @@ export default function ScheduleFeed({
 
   return (
     <section className="card">
-      <h2 className="sectionTitle">일정 목록</h2>
-      <p className="subtle">제목을 누르면 본문과 첨부를 확인할 수 있습니다.</p>
+      <h2 className="sectionTitle">3-3 수행평가 일정</h2>
+      <p className="subtle"></p>
       <ul className="scheduleList">
         {items.map((item) => (
           <li
