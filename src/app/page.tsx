@@ -12,15 +12,6 @@ export default async function HomePage() {
 
   return (
     <main className="pageShell">
-      <section className="hero">
-        <p className="eyebrow">NO LOGIN · MOBILE READY</p>
-        <h1>일정 보드</h1>
-        <p>
-          관리자가 설정한 순서대로 일정 목록을 확인하고, 제목을 눌러 본문과 첨부 파일/링크를 볼
-          수 있습니다.
-        </p>
-      </section>
-
       <ScheduleFeed initialItems={seededItems} initialCursor={initial.nextCursor} />
     </main>
   );

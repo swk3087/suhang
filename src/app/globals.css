@@ -4,7 +4,7 @@
   --bg-bottom: #ebf2ff;
   --ink: #222430;
   --muted: #5f6779;
-  --panel: rgba(255, 255, 255, 0.88);
+  --panel: #ffffff;
   --line: rgba(34, 36, 48, 0.12);
   --accent: #007ea7;
   --accent-strong: #005f7a;
@@ -12,7 +12,6 @@
   --success: #2e7d32;
   --radius-xl: 22px;
   --radius-md: 14px;
-  --shadow: 0 20px 45px rgba(15, 34, 74, 0.12);
 }
 
 * {
@@ -46,14 +45,12 @@ a {
 }
 
 .hero {
-  background: linear-gradient(125deg, rgba(255, 255, 255, 0.95), rgba(232, 245, 252, 0.95));
+  background: var(--panel);
   border: 1px solid var(--line);
-  box-shadow: var(--shadow);
   border-radius: var(--radius-xl);
   padding: 24px 20px;
   display: grid;
   gap: 12px;
-  animation: riseIn 180ms ease-out forwards;
 }
 
 .compactHero {
@@ -97,7 +94,7 @@ a {
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 90ms ease, border-color 90ms ease, color 90ms ease;
+  transition: none;
 }
 
 .primaryLink,
@@ -147,7 +144,6 @@ a {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow);
   padding: 18px 16px;
   display: grid;
   gap: 10px;
@@ -195,7 +191,6 @@ a {
   padding: 10px 12px;
   display: grid;
   gap: 6px;
-  animation: slideFade 120ms ease-out both;
 }
 
 .scheduleRowMain {
@@ -381,38 +376,6 @@ a {
   border: 1px dashed var(--line);
   border-radius: var(--radius-md);
   padding: 12px;
-}
-
-@keyframes riseIn {
-  0% {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideFade {
-  0% {
-    opacity: 0;
-    transform: translateY(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
 }
 
 @media (min-width: 900px) {
