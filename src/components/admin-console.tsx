@@ -152,8 +152,8 @@ export default function AdminConsole() {
 
       const selectedFiles = fileInputRef.current?.files;
       if (selectedFiles) {
-        Array.from(selectedFiles).forEach((file) => {
-          formData.append("files", file);
+        Array.from(selectedFiles).forEach((file, index) => {
+          formData.append(`files[${index}]`, file);
         });
       }
 

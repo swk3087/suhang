@@ -98,9 +98,19 @@ export function parseKeepFileIds(value: FormDataEntryValue | null): string[] {
 }
 
 export function parseFiles(formData: FormData): File[] {
-  return formData
-    .getAll("files")
-    .filter((entry): entry is File => typeof entry !== "string");
+  const collected: File[] = [];
+
+  for (const [key, value] of formData.entries()) {
+    if (typeof value === "string") {
+      continue;
+    }
+
+    if (key === "files" || /^files\[\d+\]$/.test(key)) {
+      collected.push(value);
+    }
+  }
+
+  return collected;
 }
 
 export function encodeDownloadFileName(name: string): string {
@@ -108,4 +118,3 @@ export function encodeDownloadFileName(name: string): string {
     `%${char.charCodeAt(0).toString(16).toUpperCase()}`,
   );
 }
-
